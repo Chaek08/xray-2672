@@ -1,0 +1,104 @@
+function main111()
+	local c = get_console()
+	c:execute("disconnect")
+end
+
+function ___main()
+ game.start_tutorial("part_14_overload")
+end
+
+
+-- run_string alife():create("wpn_fn2000", db.actor:position(), db.actor:level_vertex_id(),db.actor:game_vertex_id())
+
+
+function main123()
+	local a,b = get_task_info("kill_gunslinger","_small")
+	db.actor:give_game_news("task state changed", a, b, 0, 0)
+	
+--	db.actor:give_talk_message("trader", "ui\\ui_icons_task",Frect():set(300,100,50,50),"iconed_trade_info")
+--	db.actor:give_talk_message("Превед", "trader", "ui\\ui_icons_task",Frect():set(300,100,50,50),"iconed_trade_info")
+--	db.actor:give_talk_message("Превед", "trader", "trader", "ui\\ui_icons_task",Frect():set(300,100,50,50),"iconed_trade_info")
+--	db.actor:give_game_news("превед", "ui\\ui_icons_task", Frect():set(300,100,50,50),0,0)
+--	db.actor:give_game_news("превед","trader", "ui\\ui_icons_task", Frect():set(300,100,50,50),0,0)
+--	db.actor:give_game_news("trader","trader","trader", "ui\\ui_icons_task", Frect():set(300,100,50,50),0,0)
+end
+
+
+--snd_radar_stop	= sound_object([[ambient\cooling_stop]])
+function _main()
+	local radius = 30
+	local ang    = 45
+	local dir    = vector_rotate_y( db.actor:direction(), ang )
+	level.spawn_phantom(db.actor:position():add( dir:mul(radius) ))
+end
+
+function main_qqqq()
+	local info = "test_andy_info" 
+	db.actor:give_info_portion(info) 
+--	alife():create("wpn_binoc", db.actor:position(), db.actor:level_vertex_id(),db.actor:game_vertex_id())		
+	
+
+--    alife():create ("wpn_knife", db.actor:position (), db.actor:level_vertex_id (),db.actor:game_vertex_id (), db.actor:id())
+
+
+--	snd_radar_stop:play(db.actor, 0, sound_object.s2d)
+--	level.add_complex_effector("effector_radar_stop", 12345)
+	
+--	db.actor:activate_slot(db.actor:active_slot()+1)
+
+--	local news_text = "%c<255,160,160,160>" .. "Задание выполнено" .. "\\n" .. "%c<default>" .. "Информация о винтовке FN-2000 а также куча всякой лабуды типа убить долбаного стрелка или помочь сраному раненому"
+
+--	db.actor:give_game_news(news_text, "ui\\ui_pop_up_active_back", Frect():set(0,0,16,16), 0, 0)
+--	local news_text = "%c<255,160,160,160>" .. "Задание выполнено" .. "\\n" .. "%c<default>" .. "Информация о винтовке FN-2000 а также куча всякой лабуды типа убить долбаного стрелка или помочь сраному раненому"
+--	local a,b = get_task_info("ui_iconsTotalSmall_found","_money")
+--	b:set(83,0,49,26)
+--	db.actor:give_game_news(news_text, a, b, 0, 0)
+
+--	db.actor:give_talk_message(news_text, "ui\\ui_icons_task",Frect():set(300,100,50,50),"iconed_trade_info")
+
+-- game.start_tutorial("credits_seq")
+	
+	
+	info = "tutorial_artefact_start" 
+	db.actor:give_info_portion(info) 
+	
+	
+--	info = "encyclopedy_weapons_wpn_groza" 
+--	db.actor:give_info_portion(info) 
+	
+--	info = "encyclopedy_weapons_wpn_fn2000"
+--	db.actor:give_info_portion(info) 
+
+--	info = "encyclopedy_mutant_flesh"
+--	db.actor:give_info_portion(info) 
+
+--	info = "encyclopedy_zone_artifact_af-cristall-flower"
+--	db.actor:give_info_portion(info) 
+end
+
+function main()
+	level.add_pp_effector ("psy_antenna.ppe", 1001, true)
+	level.set_pp_effector_factor(1001, 0.5)
+--	level.remove_pp_effector(1001)
+end
+
+function main___________()
+   local h 		= hit()
+   h.power 		= 0.6
+   h.direction 	= vector():set(0, 0, 1)
+   h.impulse 	= 0
+   h.draftsman 	= db.actor
+   h.type 		= hit.fire_wound
+   db.actor:hit(h)
+
+--burn  		1
+--shock  		1
+--strike  		1
+--wound  		1
+--fire_wound  	1
+--radiation   	1
+--telepatic   	1
+--chemical_burn 1
+--explosion
+
+end
