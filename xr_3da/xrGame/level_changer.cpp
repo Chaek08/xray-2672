@@ -20,6 +20,8 @@
 #include "HudManager.h"
 #include "UIGameSP.h"
 
+#include "ai_object_location_impl.h"
+
 xr_vector<CLevelChanger*>	g_lchangers;
 
 CLevelChanger::~CLevelChanger	()

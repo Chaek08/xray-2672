@@ -67,6 +67,8 @@
 #	include "../../map_manager.h"
 #endif
 
+#include "../ai_object_location_impl.h"
+
 using namespace StalkerSpace;
 
 #ifdef DEBUG

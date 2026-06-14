@@ -98,8 +98,8 @@ TEMPLATE_SPECIALIZATION
 const typename CSXML_IdToIndex::ITEM_DATA* CSXML_IdToIndex::GetById (const T_ID& str_id, bool no_assert)
 {
 	T_INIT::InitXmlIdToIndex();
-		
-	for(T_VECTOR::iterator it = m_pItemDataVector->begin();
+	T_VECTOR::iterator it = m_pItemDataVector->begin();
+	for(;
 		m_pItemDataVector->end() != it; it++)
 	{
 		if( (*it).id == str_id)

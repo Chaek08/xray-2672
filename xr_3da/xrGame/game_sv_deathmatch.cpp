@@ -488,8 +488,9 @@ void	game_sv_Deathmatch::SM_SwitchOnNextActivePlayer()
 	u32		PossiblePlayers[32];
 	u32		cnt		= get_players_count	();
 	u32		PPlayersCount = 0;
+	u32		it = 0;
 
-	for		(u32 it=0; it<cnt; ++it)	
+	for		(; it<cnt; ++it)	
 	{
 		xrClientData *l_pC = (xrClientData*)	m_server->client_Get	(it);
 		game_PlayerState* ps	= l_pC->ps;
@@ -1056,8 +1057,8 @@ void	game_sv_Deathmatch::LoadWeaponsForTeam		(char* caSection, TEAM_WPN_LIST *pT
 	R_ASSERT(xr_strcmp(caSection,""));
 
 	pTeamWpnList->clear();
-
-	for (int i = 1; i < UNBUYABLESLOT; ++i)
+	int i = 1;
+	for (; i < UNBUYABLESLOT; ++i)
 	{
 		// Имя поля
 		string16			wpnSection;	
@@ -1090,7 +1091,8 @@ void	game_sv_Deathmatch::LoadWeaponsForTeam		(char* caSection, TEAM_WPN_LIST *pT
 	//-----------------------------------------------------------
 	u32 TotalItemsCount = pSettings->line_count(m_sBaseWeaponCostSection);
 	int CountAdded = 0;
-	for (u32 l=0; l<TotalItemsCount; l++)
+	u32 l = 0;
+	for (; l<TotalItemsCount; l++)
 	{
 		LPCSTR					N,V;
 		pSettings->r_line(m_sBaseWeaponCostSection, l, &N, &V);
