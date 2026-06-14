@@ -126,6 +126,14 @@ function distance_between_safe(obj1, obj2)
 	return obj1:position():distance_to(obj2:position())
 end
 
+function has_alife_info(info_id)
+	local aa = alife()
+	if aa == nil then
+		return false
+	end
+	return aa:has_info(0, info_id)
+end
+
 --------------------------------------------------
 -- іласс LUA реализуі   ий Finite State Machine
 -- для управления персонажами
