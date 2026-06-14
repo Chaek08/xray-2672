@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Kernel">
+      <UniqueIdentifier>{ce7cfdfd-5999-4c7b-aa47-36d86585d4e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PAPI">
+      <UniqueIdentifier>{36dcfef4-27a6-47f1-8807-5052d020e7f3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="psystem.h">
+      <Filter>Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="noise.h">
+      <Filter>PAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="particle_actions.h">
+      <Filter>PAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="particle_actions_collection.h">
+      <Filter>PAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="particle_core.h">
+      <Filter>PAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="particle_effect.h">
+      <Filter>PAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="particle_manager.h">
+      <Filter>PAPI</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="noise.cpp">
+      <Filter>PAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="particle_actions.cpp">
+      <Filter>PAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="particle_actions_collection.cpp">
+      <Filter>PAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="particle_actions_collection_io.cpp">
+      <Filter>PAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="particle_core.cpp">
+      <Filter>PAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="particle_effect.cpp">
+      <Filter>PAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="particle_manager.cpp">
+      <Filter>PAPI</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
