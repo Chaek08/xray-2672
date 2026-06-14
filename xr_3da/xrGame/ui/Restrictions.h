@@ -36,7 +36,8 @@ private:
 	void	CopyGroup			(LPCSTR from,	LPCSTR to);
 	void	AddRestriction4rank	(int rank,		LPCSTR lst);
 	LPCSTR	GetItemGroup		(LPCSTR item);
-	RESTR	GetRestr			(LPCSTR item);
+	//RESTR	GetRestr			(LPCSTR item);
+	RESTR	GetRestr			(const shared_str& item);
 	void	FillUpRank			(LPCSTR rank, int i_rank);
 
 	int									m_rank;

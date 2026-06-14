@@ -183,7 +183,7 @@ void CRestrictions::AddRestriction4rank(int rank, LPCSTR lst){		// private
 	}
 }
 
-
+/*
 RESTR CRestrictions::GetRestr(LPCSTR item){ // private function
 	RESTR ret;
 	const char* pos = strstr(item,":");
@@ -195,6 +195,25 @@ RESTR CRestrictions::GetRestr(LPCSTR item){ // private function
 	//	ret.n.max_val = 65536;
 	//else
     	ret.n = atoi(++pos);
+	return ret;
+}
+*/
+RESTR CRestrictions::GetRestr(const shared_str& item)
+{ // private function
+	VERIFY(m_bInited);
+	RESTR				ret;
+	string512			_name;
+	int _cnt = 0;
+	ptrdiff_t n = strchr(item.c_str(), ':') - item.c_str();
+	if (n > 0)
+	{
+		strncpy(_name, item.c_str(), n);
+		_name[n] = 0;
+		_cnt = sscanf(item.c_str() + n + 1, "%d", &ret.n);
+	}
+	R_ASSERT3(n > 0 && _cnt == 1, "invalid record format <name_sect:rank>", item.c_str());
+	ret.name = _name;
+
 	return ret;
 }
 
