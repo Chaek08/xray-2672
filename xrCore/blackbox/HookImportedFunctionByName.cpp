@@ -172,7 +172,8 @@ BOOL  __stdcall
             // uiCount coming into this function should be rather
             // small, so it's OK to search the entire paHookArray for
             // each function imported by szImportMod.
-            for ( UINT i = 0 ; i < uiCount ; i++ )
+            UINT i = 0;
+            for ( ; i < uiCount ; i++ )
             {
                 if ( ( paHookArray[i].szFunc[0] ==
                                                 pByName->Name[0] ) &&

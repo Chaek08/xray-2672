@@ -33,6 +33,8 @@
 #include "BugTrap.h"					// for BugTrap functionality
 #pragma comment(lib,"BugTrap.lib")		// Link to ANSI DLL
 
+#include <new>
+
 XRCORE_API	xrDebug		Debug;
 
 static bool	error_after_dialog = false;
@@ -450,15 +452,14 @@ LONG WINAPI UnhandledFilter	(_EXCEPTION_POINTERS *pExceptionInfo)
 //		::SetUnhandledExceptionFilter	(UnhandledFilter);	// exception handler to all "unhandled" exceptions
     }
 #else
-    typedef int		(__cdecl * _PNH)( size_t );
-    _CRTIMP int		__cdecl _set_new_mode( int );
-    _CRTIMP _PNH	__cdecl _set_new_handler( _PNH );
+	static void __cdecl def_new_handler()
+	{
+		_out_of_memory(static_cast<size_t>(~0u));
+	}
 
     void	xrDebug::_initialize		()
     {
-		handler							= 0;
-        _set_new_mode					(1);					// gen exception if can't allocate memory
-        _set_new_handler				(_out_of_memory	);		// exception-handler for 'out of memory' condition
+		std::set_new_handler			(def_new_handler);		// exception-handler for 'out of memory' condition
 		std::set_terminate				(_terminate);
 		std::set_unexpected				(_terminate);
 		SetupExceptionHandler			();
