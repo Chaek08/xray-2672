@@ -107,7 +107,7 @@
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <ImportLibrary>$(OutDir)xrD3D9-Null.lib</ImportLibrary>
+      <ImportLibrary>$(SolutionDir)$(Configuration)\lib\xrD3D9-Null.lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <BuildLog>
