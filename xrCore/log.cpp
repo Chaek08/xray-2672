@@ -162,14 +162,14 @@ void CreateLog			(BOOL nl)
 	int build=0, mnum=0, dnum, ynum, mcnt;
 	char mon[4];
 	char buf[128];
-	strcpy(buf,__DATE__);
+	strcpy(buf, "Oct 25 2006"); //чтобы соответствовать
 	sscanf(buf,"%s %d %d",mon,&dnum, &ynum);
 	for (int i=0; i<12; i++) {
 		if (stricmp(month[i],mon)==0) mnum=i;
 	}
 	for (mcnt=6; mcnt<mnum; mcnt++) build+=day_in_month[mcnt];
 	build+=dnum;
-	Msg("'%s' build %d, %s\n","xrCore",build+(ynum-1999)*365, __DATE__);
+	Msg("'%s' build %d, %s\n","xrCore",build+(ynum-1999)*365, buf);
 }
 
 void CloseLog(void)
