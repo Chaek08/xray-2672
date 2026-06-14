@@ -38,6 +38,7 @@ void CStalkerAnimationManager::global_play_callback(CBlend *blend)
 	animation.global().make_inactual();
 }
 
+/*
 MotionID CStalkerAnimationManager::assign_global_animation	()
 {
 	if (eMentalStatePanic != object().movement().mental_state()) {
@@ -54,6 +55,18 @@ MotionID CStalkerAnimationManager::assign_global_animation	()
 			]
 		);
 	}
+
+	if (fis_zero(object().movement().speed(object().character_physics_support()->movement())))
+		return						(MotionID());
+
+	return							(m_data_storage->m_part_animations.A[body_state()].m_global.A[1].A[0]);
+}
+*/
+
+MotionID CStalkerAnimationManager::assign_global_animation	()
+{
+	if (eMentalStatePanic != object().movement().mental_state())
+		return						(MotionID());
 
 	if (fis_zero(object().movement().speed(object().character_physics_support()->movement())))
 		return						(MotionID());
