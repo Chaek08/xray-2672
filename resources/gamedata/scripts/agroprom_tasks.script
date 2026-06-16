@@ -94,7 +94,7 @@ function have_gunslingers_flash(task, objective)
 end
 
 function ghost_tips ()
-	news_manager.send_tip( db.actor, "ghost_tips", nil, "prizrak", nil )
+	news_manager.send_tip_nosound( db.actor, "ghost_tips", 1000, "prizrak")
 end
 
 function agr_actor_enemy ()
